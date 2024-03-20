@@ -1,0 +1,368 @@
+<!--
+    #Instructions on how to clone this template
+    1. Make a copy of the document with a new filename, never edit this original source.
+    2. Insert your text under row > page-main > content-block. Wrap each new paragraph in 
+        the <p></p> tag, and wrap each phrase to be annotated in the anchor tag <a class="note"></a>.
+        This is demonstrated below. No other modifications to the text are necessary, as the actual
+        annotation process is handled by javascript at the bottom of the page.
+    3. Under the first <script> block, update the annotations dictionary with each desired annotation,
+        using the following format: "'annotated text goes here': 'annotation goes here',"
+        End the dictionary with a semicolon. The dictionary keys must exactly match the text content of the
+        annotated text in the paragraph, and each anchor tag must have exactly one dictionary reference. 
+        Do not create anchor tags without matching dictionary references, or attempt to assign multiple annotations
+        to one annotated phrase.
+    4. Copy and paste this entire document into a custom HTML field in WordPress or the CMS of your choice.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/bb1d08a9b2.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+<style>
+.row {
+    width: 100%;
+    display: table;
+    margin-top: 0px;
+}
+
+.page-main {
+    width: 70%;
+    display: table-cell;
+}
+
+.page-sidebar {
+    width: 29%;
+    display: table-cell;
+}
+
+.content-block {
+    margin-right: 30px;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.note {
+    text-decoration: underline;
+    text-decoration-color: #eb5e28;
+    text-decoration-thickness: 3px;
+}
+
+.note:hover {
+    background-color: lightgrey;
+}
+
+.annotation {
+    border: 0px;
+    border-top: 2px;
+    border-style: solid;
+    border-color: #eb5e28;
+    display: block;
+}
+
+.annotation > p {
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+}
+
+.footnote {
+    vertical-align: super;
+    font-size: .75em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.footnote:hover {
+    color: #eb5e28;
+}
+
+.footnote-text {
+    border: 0px;
+    border-top: 2px;
+    border-style: solid;
+    border-color: black;
+    display: block;
+}
+
+.footnote-text > p {
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1em;
+}
+
+/* mobile adaptation */
+
+@media screen and (min-width: 820px) {
+    .annotation {
+        width: fit-content;
+        transition-property: top;
+        transition-duration: 1s;
+        max-width: 300px;
+        top: 20px;
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .page-main {
+        width: 100%;
+    }
+
+    .content-block {
+        margin-right: 0px;
+    }
+
+    .annotation {
+        bottom: 0px;
+        width: 100%;
+        left: 0px;
+        background-color: white;
+        box-shadow: 0 2px 6px 2px #666;
+        border-top: 0px;
+        height: fit-content;
+        max-height: 0px;
+        position: fixed;
+        transition-property: "max-height";
+        transition-duration: "1s";
+    }
+
+    .page-sidebar {
+        display: block;
+    }
+
+    .annotation > p {
+        margin-left: 10px;
+        margin-right: 10px;
+        border: 0px;
+        border-top: 2px;
+        border-style: solid;
+        padding-top: 10px;
+        margin-top: 20px;
+        padding-bottom: 50px;
+    }
+}
+</style>
+
+</head>
+<body>
+    <div class="row">
+        <div class="page-main">
+            <div class="content-block">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Aliquam tellus metus, congue nec augue eu, scelerisque 
+                    pretium metus. Praesent ornare porta aliquam. Quisque ac 
+                    justo a nisi cursus tincidunt sit amet et lorem. Praesent ac 
+                    turpis ligula. Donec quis enim id lectus ultricies rhoncus. 
+                    Proin auctor, ante non auctor rutrum, arcu nisl posuere felis, 
+                    ac tempus massa neque nec urna. <a class="note">Vivamus magna libero</a>, luctus 
+                    sit amet ligula ac, elementum vehicula dui. Curabitur ac 
+                    nunc vel dui porttitor mattis at sed tellus. Phasellus 
+                    quis bibendum orci, vitae scelerisque libero. Cras euismod 
+                    massa sem, et scelerisque nisi semper eget.<a class="footnote">1</a> Aliquam mauris
+                     sem, cursus a ligula ac, sollicitudin varius nisi. Nullam 
+                     aliquam justo purus, at sagittis ipsum varius at. Donec in 
+                     tincidunt erat, vel elementum diam. Nulla bibendum placerat 
+                     tortor, vitae cursus nisi auctor ac.</p>
+
+                <p>Nullam quis lorem mi. Maecenas aliquam ipsum in nisl cursus, 
+                    in feugiat massa blandit. Quisque vestibulum gravida risus, 
+                    sed congue felis euismod vel. Morbi finibus mollis ultrices. 
+                    Integer laoreet malesuada enim, ut iaculis nisi pharetra eu. 
+                    Sed eleifend, mi et feugiat semper, dolor enim condimentum tortor, 
+                    eu faucibus arcu nibh semper justo. Class aptent taciti sociosqu 
+                    ad litora torquent <a class="note">per conubia nostra</a>, per inceptos himenaeos. 
+                    Donec tincidunt ac mi vitae lacinia. Vestibulum ante ipsum 
+                    primis in faucibus orci luctus et ultrices posuere cubilia curae; 
+                    Class aptent taciti sociosqu ad litora torquent per conubia nostra, 
+                    per inceptos himenaeos. Donec odio erat, consequat id augue et, 
+                    rutrum laoreet purus.</p>
+
+                <p>Fusce sodales fermentum nibh non varius. Vivamus in nisi nec neque 
+                    sodales lacinia non eu felis. Proin viverra turpis vitae ultrices 
+                    luctus. Vivamus in mauris vulputate, mollis lacus sed, fringilla 
+                    tellus. Nam ac velit ac risus finibus commodo hendrerit eu lacus. 
+                    Sed sollicitudin enim tempus eleifend mollis. <a class="note">Sed malesuada sed ipsum nec eleifend.</a> 
+                    Morbi in urna at tellus mollis egestas ac 
+                    fringilla mi. Sed ac condimentum neque. Vestibulum imperdiet massa 
+                    id arcu placerat vulputate. Sed egestas sodales urna nec sollicitudin. 
+                    Donec dapibus fringilla erat id auctor.</p>
+
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada 
+                    fames ac turpis egestas. Mauris hendrerit dictum convallis. 
+                    Pellentesque sit amet tellus porta, mattis nisl sed, faucibus urna. 
+                    Ut eu sollicitudin augue. Sed fermentum rhoncus dui, at tincidunt 
+                    lacus. Nulla vitae magna posuere, aliquam augue ac, sodales felis. 
+                    Pellentesque condimentum finibus massa convallis viverra. Pellentesque 
+                    quis lectus vel augue ornare volutpat a ac augue. Aenean sit amet 
+                    aliquam libero, eget posuere ligula. Phasellus molestie libero at ipsum 
+                    euismod, sit amet pellentesque odio dapibus.</p>
+
+                <p>In eu urna vulputate, tempus dui sit amet, molestie augue. Morbi nec 
+                    diam molestie <a class="note">lectus dapibus faucibus</a> ullamcorper nec arcu. Nullam 
+                    enim felis, dignissim et est in, maximus vulputate sem. Quisque 
+                    dictum elit quis odio maximus, a posuere diam sollicitudin. Proin et 
+                    tempor ligula. Aliquam tellus lorem, maximus et est sed, ornare 
+                    malesuada magna. Vestibulum at vulputate massa. Sed lobortis cursus 
+                    aliquet. Curabitur in mi ac erat pellentesque volutpat. Donec id 
+                    luctus dui. Mauris bibendum tellus tortor, ac fringilla turpis euismod 
+                    a. Sed id lectus odio. Aenean egestas dignissim facilisis. Pellentesque 
+                    augue dolor, tincidunt at sem nec, vehicula feugiat neque.</p>
+            </div>
+        </div>
+        <div class="page-sidebar">
+            <div class="annotation">
+                <p>Hello world</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* annotations dictionary */
+        var annotations_dict = {
+            'Vivamus magna libero': "hello world",
+            'per conubia nostra': "Sed hendrerit quis turpis sed congue. Praesent massa ante, rutrum quis arcu et, aliquam gravida velit. Suspendisse diam ante, rhoncus sed tristique nec, tempor et tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nullam sit amet turpis a ligula commodo hendrerit. Morbi elementum sed neque eu tincidunt. Aenean iaculis suscipit elit et dictum. Pellentesque pulvinar maximus nunc, at tempor turpis ullamcorper in. Etiam urna purus, bibendum at tincidunt et, dapibus eget leo.",
+            'Sed malesuada sed ipsum nec eleifend.': "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+            'lectus dapibus faucibus': "'There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...'"
+        };
+
+        var footnotes_dict = {
+            '1': "This is a demo footnote"
+        }
+    </script>
+
+    <script>
+        /* actual script, do not alter */
+        var classname = ".note";
+        var footname = ".footnote";
+
+        var annot_name = ".annotation";
+
+        var footnote_block_name = ".footnote-text";
+
+        var elms=document.querySelectorAll(classname);
+        var footnotes = document.querySelectorAll(footname);
+
+        var annotations = document.querySelectorAll(annot_name);
+        var annotation = annotations[0];
+
+        var footnote_block = document.querySelector(footnote_block_name);
+
+        var annot_paragraph = annotation.querySelector("p");
+
+        if (window.innerWidth > 820) {
+            for(var i=0;i<elms.length;i++){
+                elms[i].onclick = function(){
+            
+                    annotation.style.transitionDuration = "1s";
+                    annotation.style.borderColor = "#eb5e28";
+            
+                    var new_annotation = annotations_dict[this.textContent];
+            
+                    annot_paragraph.textContent = new_annotation;
+            
+                    var annotation_position = annotation.getBoundingClientRect();
+            
+                    var mid_height = annotation_position.height / 2;
+            
+                    var self_position = this.getBoundingClientRect();
+                    var self_y_formatted = self_position.y;
+                    self_y_formatted += window.scrollY;
+                    self_y_formatted = self_y_formatted - mid_height + 10;
+            
+                    self_y_formatted = self_y_formatted.toString();
+                    self_y_formatted = self_y_formatted.concat("px");
+            
+                    annotation.style.top = self_y_formatted;
+            
+                };
+            }
+
+            for(var j=0;j<footnotes.length;j++){
+                footnotes[j].onclick = function(){
+            
+                    annotation.style.transitionDuration = "1s";
+                    annotation.style.borderColor = "black";
+            
+                    var new_annotation = footnotes_dict[this.textContent];
+                    new_annotation = this.textContent.concat("."," ",new_annotation);
+            
+                    annot_paragraph.textContent = new_annotation;
+            
+                    var annotation_position = annotation.getBoundingClientRect();
+            
+                    var mid_height = annotation_position.height / 2;
+            
+                    var self_position = this.getBoundingClientRect();
+                    var self_y_formatted = self_position.y;
+                    self_y_formatted += window.scrollY;
+                    self_y_formatted = self_y_formatted - mid_height + 10;
+            
+                    self_y_formatted = self_y_formatted.toString();
+                    self_y_formatted = self_y_formatted.concat("px");
+            
+                    annotation.style.top = self_y_formatted;
+            
+                };
+            }
+            
+            if (elms.length > 0) {
+                annotation.style.transitionDuration = "0s";
+            
+                var curr = elms[0];
+            
+                var new_annotation = annotations_dict[curr.textContent];
+            
+                annot_paragraph.textContent = new_annotation;
+            
+                var annotation_position = annotation.getBoundingClientRect();
+            
+                var mid_height = annotation_position.height / 2;
+            
+                var self_position = curr.getBoundingClientRect();
+                var self_y_formatted = self_position.y;
+                self_y_formatted += window.scrollY;
+                self_y_formatted = self_y_formatted - mid_height + 10;
+            
+                self_y_formatted = self_y_formatted.toString();
+                self_y_formatted = self_y_formatted.concat("px");
+            
+                annotation.style.top = self_y_formatted;
+            }
+        } else {
+            annotation.style.maxHeight = "0px";
+            for(var i=0;i<elms.length;i++){
+                elms[i].onclick = function(){
+
+                    if (parseFloat(annotation.style.maxHeight) > 0) {
+                        annotation.style.maxHeight = "0px";
+                    } else {
+                        var new_annotation = annotations_dict[this.textContent];
+            
+                        annot_paragraph.textContent = new_annotation;
+
+                        annotation.style.maxHeight = "500px";
+                    }
+            
+                    annotation.style.transitionDuration = "1s";
+            
+                };
+            }
+
+            addEventListener("scroll", (event) => {});
+
+            onscroll = (event) => {
+                annotation.style.maxHeight = "0px";
+            };
+        }
+    </script>
+</body>
+</html>
