@@ -301,41 +301,41 @@ a[href]:hover {
 
 #mc_embed_signup {
   width: 100% !important;
-  float: right;
-  padding-right: 2px;
+  float: right !important;
+  padding-right: 2px !important;
 }
 
 #mc_embed_shell {
-  width: fit-content;
-  float: right;
-  width: 75%;
+  width: fit-content !important;
+  float: right !important;
+  width: 75% !important;
 }
 
 #mc-embedded-subscribe {
-  float: right;
-  margin-top: 0px;
-  margin-left: 5px;
-  border-radius: 25px;
-  border: none;
-  background-color: #91a6ff;
-  font-size: 15px;
-  padding: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #ffffff;
+  float: right !important;
+  margin-top: 0px !important;
+  margin-left: 5px !important;
+  border-radius: 25px !important;
+  border: none !important;
+  background-color: #91a6ff !important;
+  font-size: 15px !important;
+  padding: 5px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  color: #ffffff !important;
 }
 
 #mc-embedded-subscribe:hover {
-  background-color: #1f487e;
+  background-color: #1f487e !important;
 }
 
 #mce-EMAIL {
-  float: right;
-  width: 70%;
-  border-radius: 25px;
-  height: 1.5em;
-  border: 1.5px solid black;
-  padding-left: 10px;
+  float: right !important;
+  width: 70% !important;
+  border-radius: 25px !important;
+  height: 1.5em !important;
+  border: 1.5px solid black !important;
+  padding-left: 10px !important;
 }
 
 input[type="submit"] {
