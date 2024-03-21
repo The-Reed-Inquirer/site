@@ -20,8 +20,14 @@
 
 p {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
+    font-size: 1.1em;
     line-height: 1.5em;
+}
+
+li {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.1em;
+  line-height: 1.5em;
 }
 
 .note {
@@ -55,7 +61,7 @@ a[href]:hover {
 .annotation > p {
     margin-top: 10px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 .footnote {
@@ -368,6 +374,38 @@ input[type="submit"] {
   padding: 10px;
   text-transform: uppercase;
   font-size: 2em;
+}
+
+.table-word {
+  background-color: #eb5e28;
+  color: white;
+  padding: 10px;
+  margin-right: 0px;
+  text-align: right;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.table-description {
+  border: 2px #eb5e28 solid;
+  padding: 10px;
+  margin-left: 0px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.tenets-table {
+  width: 100%;
+}
+
+.source-files {
+  text-decoration: none !important;
+  transition: margin-top .5s;
+}
+
+.source-files:hover {
+  color: white !important;
+  background-color: #eb5e28 !important;
+  margin-top: -5px;
 }
 
 /* mobile adaptation */
