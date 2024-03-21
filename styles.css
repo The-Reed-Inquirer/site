@@ -338,6 +338,10 @@ a[href]:hover {
   padding-left: 10px !important;
 }
 
+#mc_embed_signup div.mce_inline_error {
+  display: none !important;
+}
+
 input[type="submit"] {
   font-family: FontAwesome;
 }
