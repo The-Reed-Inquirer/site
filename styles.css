@@ -16,6 +16,7 @@
 
 .content-block {
     margin-right: 30px;
+    margin-top: 30px;
 }
 
 p {
@@ -180,12 +181,6 @@ a[href]:hover {
     width: 2em;
     margin: 0.1em;
   }
-  h2 {
-    font-size: 1.3em;
-    margin: 0;
-    position: absolute;
-    left: 1em;
-  }
   #social-panel {
     position: relative;
     box-shadow: 0 1px 5px #666;
@@ -270,6 +265,45 @@ a[href]:hover {
     color: #ffffff;
 }
 
+.control-menu {
+  margin-top: 0px;
+  position: relative;
+  width: fit-content;
+  float: right;
+  margin-bottom: 2px;
+}
+
+.menu-item-panel {
+  position: relative;
+  right: 0px;
+  padding: .5em;
+  margin: 0.1em;
+  width: fit-content;
+  margin-bottom: 10px;
+  background-color: #eb5e28;
+  float: left;
+  transition: margin-top .5s;
+  border-radius: 25px;
+}
+
+.menu-item-panel:hover {
+  margin-top: -4px;
+}
+
+.menu-item {
+  text-transform: uppercase;
+  font-size: .8em;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+  font-weight: 530;
+  color: white;
+}
+
+.masthead {
+  height: 50px;
+}
+
 .headline {
     font-family: 'times new roman',times,serif;
     font-size: 2.5em;
@@ -308,7 +342,7 @@ a[href]:hover {
 #mc_embed_shell {
   width: fit-content !important;
   float: right !important;
-  width: 75% !important;
+  width: 92% !important;
 }
 
 #mc-embedded-subscribe {
@@ -418,6 +452,21 @@ input[type="submit"] {
   left: 25px;
 }
 
+.meta-separator {
+  background-color: white;
+  border: 5px solid #eb5e28;
+  height: 25%;
+}
+
+h2 {
+  font-family: 'Times New Roman', Times, serif;
+  border: #eb5e28 2px solid;
+  width: fit-content;
+  padding: 10px;
+  color: black;
+  margin-bottom: 10px;
+}
+
 /* mobile adaptation */
 
 @media screen and (min-width: 820px) {
@@ -497,5 +546,10 @@ input[type="submit"] {
 
     .mobile-masthead {
       display: block;
+    }
+
+    h2 {
+      width: 90%;
+      text-align: center;
     }
 }
