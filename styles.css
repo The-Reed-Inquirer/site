@@ -306,13 +306,17 @@ a[href]:hover {
 
 .headline {
     font-family: 'times new roman',times,serif;
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 700;
+    color: black;
+    margin: 20px;
+    margin-top: 0px;
 }
 
 .headline-box {
     margin-top: 20px;
     margin-bottom: 20px;
+    border: 3px solid #eb5e28;
 }
 
 .social-button {
@@ -383,19 +387,19 @@ input[type="submit"] {
 .meta {
   font-size: 1.1em;
   width: 100%;
-  height: 40px;
+  height: 30px;
   font-weight: 530;
+  margin: 20px;
+  margin-bottom: 0px;
 }
 
 .meta>* {
   float: left;
   margin-right: 10px;
-  background-color: #eb5e28;
-  color: white;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
+  color: black;
+  border-radius: 25px;
+  font-style: italic;
+  height: fit-content;
 }
 
 .mobile-masthead {
@@ -438,24 +442,17 @@ input[type="submit"] {
 .source-files {
   text-decoration: none !important;
   transition: margin-top .5s;
+  background-color: white !important;
 }
 
 .source-files:hover {
-  color: white !important;
-  background-color: #eb5e28 !important;
-  margin-top: -5px;
+  margin-top: -4px;
 }
 
 .response {
   top: 10px;
   position: relative;
   left: 25px;
-}
-
-.meta-separator {
-  background-color: white;
-  border: 5px solid #eb5e28;
-  height: 25%;
 }
 
 h2 {
