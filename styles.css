@@ -467,6 +467,25 @@ h2 {
   margin-bottom: 10px;
 }
 
+.mobile-menu {
+  height: fit-content;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  background-color: white;
+  box-shadow: 0 1px 5px #666;
+}
+
+.mobile-menu-item {
+  width: 33%;
+  text-align: center;
+  height: fit-content;
+  float: left;
+  font-size: 2em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 /* mobile adaptation */
 
 @media screen and (min-width: 820px) {
@@ -480,6 +499,10 @@ h2 {
     }
 
     .mobile-masthead {
+      display: none;
+    }
+
+    .mobile-menu {
       display: none;
     }
 }
@@ -551,5 +574,9 @@ h2 {
     h2 {
       width: 90%;
       text-align: center;
+    }
+
+    .mobile-menu {
+      display: block;
     }
 }
