@@ -562,6 +562,12 @@ h2 {
   font-size: 1em;
 }
 
+.document-wrapper {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+}
+
 /* mobile adaptation */
 
 @media screen and (min-width: 820px) {
