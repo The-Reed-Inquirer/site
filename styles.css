@@ -636,6 +636,7 @@ h2 {
         position: fixed;
         transition-property: "max-height";
         transition-duration: "1s";
+        z-index: 999;
     }
 
     .page-sidebar {
