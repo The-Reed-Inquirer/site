@@ -281,7 +281,7 @@ a[href]:hover {
   margin: 0.1em;
   width: fit-content;
   margin-bottom: 10px;
-  background-color: #eb5e28;
+  background-color: #91a6ff;
   float: left;
   transition: margin-top .5s;
   border-radius: 25px;
@@ -318,7 +318,7 @@ a[href]:hover {
 .headline-box {
     margin-top: 20px;
     margin-bottom: 20px;
-    border: 3px solid #eb5e28;
+    border: 3px solid #91a6ff;
 }
 
 .social-button {
@@ -421,7 +421,7 @@ input[type="submit"] {
 }
 
 .table-word {
-  background-color: #eb5e28;
+  background-color: #91a6ff;
   color: white;
   padding: 10px;
   margin-right: 0px;
@@ -431,7 +431,7 @@ input[type="submit"] {
 }
 
 .table-description {
-  border: 2px #eb5e28 solid;
+  border: 2px #91a6ff solid;
   padding: 10px;
   margin-left: 0px;
   font-family: 'Times New Roman', Times, serif;
@@ -459,7 +459,7 @@ input[type="submit"] {
 
 h2 {
   font-family: 'Times New Roman', Times, serif;
-  border: #eb5e28 2px solid;
+  border: #91a6ff 2px solid;
   width: fit-content;
   padding: 10px;
   color: black;
@@ -476,7 +476,7 @@ h2 {
 }
 
 .mobile-menu-item {
-  width: 33%;
+  width: 25%;
   text-align: center;
   height: fit-content;
   float: left;
@@ -552,7 +552,7 @@ h2 {
   position: relative;
   bottom: 20px;
   width: 100%;
-  background-color: #eb5e28;
+  background-color: #91a6ff;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
